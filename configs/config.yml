@@ -1,0 +1,5 @@
+app:
+  logger_location: ".bin/logs/application.log"
+
+enrl_parser:
+  docs_location: "assets/docs"
