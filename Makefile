@@ -1,18 +1,18 @@
-.PHONY:
+.PHONY: all
 
-BUILD_NAME=enrollments-parser
-APP_NAME=enrollments-parser-app
+PROJ_PATH := ${CURDIR}
+DOCKER_PATH := ${PROJ_PATH}/docker
 
-app-build-local:
-	go build -o .bin/$(BUILD_NAME) cmd/$(BUILD_NAME)/main.go
+ENR_PARSER=enrollments-parser
 
-app-up-local:
-	.bin/$(BUILD_NAME) "./configs/config.yml"
+BASIC_IMAGE=default
 
-app-run: app-build-local app-up-local
+build-app:
+	go build -o .bin/${ENR_PARSER} cmd/${ENR_PARSER}/main.go
 
-app-build:
-	docker build -t $(BUILD_NAME) .
+build-docker:
+	docker build -t ${BASIC_IMAGE} -f ${DOCKER_PATH}/builder.Dockerfile .
+	docker build -t enrollments-parser-service -f ${DOCKER_PATH}/enrollments_parser.Dockerfile .
 
-app-up:
-	docker run --name=$(APP_NAME) $(BUILD_NAME)
+app-up: build-docker
+	docker-compose up --build

@@ -1,0 +1,6 @@
+version: "3.7"
+
+services:
+  enrollments-parser:
+    image: enrollments-parser-service
+    container_name: enrl_parser_service
