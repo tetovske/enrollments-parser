@@ -2,12 +2,13 @@ package app
 
 import (
 	logger "github.com/sirupsen/logrus"
-	"github.com/tetovske/enrollments-parser/pkg/config"
+	"github.com/tetovske/enrollments-parser/pkg/util"
+	"os"
 )
 
-func Start(configPath string) (err error) {
+func Start() (err error) {
 	logger.Println("Parser started")
-	conf, err := config.ParseConfig(configPath)
+	conf, err := util.ParseConfig(os.Getenv("PROJ_ROOT") + "/configs/config.yml")
 	if err != nil {
 		logger.Fatal(err)
 		return err

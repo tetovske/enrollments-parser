@@ -2,6 +2,9 @@ FROM golang:latest
 
 WORKDIR /baumanfinder
 
+ENV PROJ_ROOT=/baumanfinder
+
 COPY . .
 
-RUN make build-app
+RUN apt-get update && \
+    make build-app

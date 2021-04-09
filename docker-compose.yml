@@ -1,6 +1,11 @@
 version: "3.7"
 
+x-enrollments-parser-volumes: &enrollments-parser-volume
+
+
 services:
   enrollments-parser:
-    image: enrollments-parser-service
+    image: enrollments-parser-image
     container_name: enrl_parser_service
+    volumes:
+    - .:/baumanfinder:cached
