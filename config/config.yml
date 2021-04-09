@@ -1,0 +1,42 @@
+docs_path: "assets/docs"
+docs_data:
+  - year: 2017
+    form_of_study: "paid"
+    file_name: "20170808_p.pdf"
+    regexes:
+      - regex: '§\d+\.\s*([а-яА-Я]+)\s*([а-яА-Я]+)\s*([а-яА-Я]+);.+иента\s*№:\s*([^;]+);.+ента\s*№:\s*([^;]+);.+ппа:\s*([а-яА-Я]+[^;]+).+лов:\s*(\d+);'
+        model:
+          - 'last_name'
+          - 'first_name'
+          - 'mid_name'
+          - 'id_abitur'
+          - 'id_stud'
+          - 'group_adm'
+          - 'exam_scores'
+  - year: 2018
+    form_of_study: "paid"
+    file_name: "2018-08-08-p-rus-платное.pdf"
+    regexes:
+      - regex: '§\d+\.\s*([а-яА-Я]+)\s*([а-яА-Я]+)\s*([а-яА-Я]+);.+иента\s*№:\s*([^;]+);.+ента\s*№:\s*([^;]+);.+ппа:\s*([а-яА-Я]+[^;]+).+лов:\s*(\d+);'
+        model:
+          - 'last_name'
+          - 'first_name'
+          - 'mid_name'
+          - 'id_abitur'
+          - 'id_stud'
+          - 'group_adm'
+          - 'exam_scores'
+  - year: 2018
+    form_of_study: "paid"
+    file_name: "2018-08-31-p-rus- платное.pdf"
+    regexes:
+      - regex: '§\d+\.\s*([а-яА-Я]+)\s*([а-яА-Я]+)\s*([а-яА-Я]+);.+иента\s*№:\s*([^;]+);.+ента\s*№:\s*([^;]+);.+ппа:\s*([а-яА-Я]+[^;]+).+лов:\s*(\d+);'
+        model:
+          - 'last_name'
+          - 'first_name'
+          - 'mid_name'
+          - 'id_abitur'
+          - 'id_stud'
+          - 'group_adm'
+          - 'exam_scores'
+

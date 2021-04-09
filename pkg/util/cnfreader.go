@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-const ConfigPath = "configs/config.yml"
+const ConfigPath = "config/config.yml"
 
 type Config struct {
 	App struct {
